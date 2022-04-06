@@ -1,0 +1,29 @@
+/* Main */
+main{
+    background-color: aqua;
+}
+main section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+main section article{
+    width: 45%;
+    margin: auto;
+    background-color: khaki;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 5px;
+}
+.aditional-info{
+    background-color: red;
+    justify-content: center;
+}
+
+/* Header */
+header{
+    display: flex;
+}
