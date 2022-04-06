@@ -4,7 +4,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-      <h1>Título/ Nombre de la app</h1>
+      <h1>Flickz (nombre provisorio)</h1>
       <section>
           <i className="fas fa-th"></i>
           <i className="fas fa-align-justify"></i>

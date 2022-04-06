@@ -1,6 +1,12 @@
 /* Main */
+body{
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 main{
-    background-color: aqua;
+    margin-top: 4px;
 }
 main section{
     display: flex;
@@ -10,20 +16,48 @@ main section{
 }
 main section article{
     width: 45%;
+    height: auto;
     margin: auto;
-    background-color: khaki;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     margin-top: 5px;
+    border: solid 1px black;
+}
+article img{
+    margin: 3px 3px 3px;
 }
 .aditional-info{
-    background-color: red;
+    margin: 3px 3px 3px 3px ;
+}
+.aditional-info{
+    background-color: rgb(154, 149, 149);
     justify-content: center;
+}
+.more{
+    color: blue;
+    text-decoration: underline;
+}
+article div{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+article div button{
+    width: 10%;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+.spinner{
+    height: 100px;
+    width: 100px;
+    justify-self: center;
 }
 
 /* Header */
 header{
     display: flex;
+    border: 2px solid black;
 }
