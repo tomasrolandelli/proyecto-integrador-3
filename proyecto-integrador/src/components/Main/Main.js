@@ -17,17 +17,23 @@ class Main extends Component {
         }))
         .catch((e)=>console.log(e))
     }
-  render() {
-    return (
-        this.state.peliculas.length===0?<img className='spinner' src='./images/spiner.gif' alt='spinner'/>:
+    borrarPelicula(peliculaId){
+        let resultado = this.state.peliculas.filter((elemento)=> elemento.id !== peliculaId)
+        this.setState({
+            peliculas: resultado
+        })
+    }
+    render() {
+        return (
+            this.state.peliculas.length===0?<img className='spinner' src='./images/spiner.gif' alt='spinner'/>:
 
-    <main>
-        <button type="button">Cargar más tarjetas</button>
-        <section className="card-container">
-            {this.state.peliculas.map((pelicula)=><Article key={pelicula.id + Date.now()} info={pelicula}/>)}
-        </section>
-    </main>
-    )
-  }
+        <main>
+            <button type="button">Cargar más tarjetas</button>
+            <section className="card-container">
+                {this.state.peliculas.map((pelicula)=><Article borrar={(id)=> this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula}/>)}
+            </section>
+        </main>
+        )
+    }
 }
 export default Main

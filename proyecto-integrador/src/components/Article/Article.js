@@ -27,7 +27,7 @@ class Article extends Component {
         return (
             <article>
                 <div>
-                    <button>X</button>
+                    <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                 </div>
                 <img src={`https://image.tmdb.org/t/p/original${this.props.info.backdrop_path}`} alt="" />
                 <h3>{this.props.info.title}</h3>
