@@ -14,7 +14,7 @@ main section{
     justify-content: space-between;
 
 }
-main section article{
+.vertical{
     width: 45%;
     height: auto;
     margin: auto;
@@ -25,6 +25,13 @@ main section article{
     text-align: center;
     margin-top: 5px;
     border: solid 1px black;
+}
+.horizontal{
+    width: 90%;
+    height: 50px;
+    display: flex;
+    border: solid 1px black;
+    
 }
 article img{
     margin: 3px 3px 3px;
@@ -40,12 +47,12 @@ article img{
     color: blue;
     text-decoration: underline;
 }
-article div{
+.vertical div{
     display: flex;
     justify-content: flex-end;
     width: 100%;
 }
-article div button{
+.vertical div button{
     width: 10%;
     margin-top: 3px;
     margin-right: 3px;

@@ -20,8 +20,8 @@ class Header extends Component {
         <header>
         <h1>Flickz (nombre provisorio)</h1>
         <section>
-            <i className="fas fa-th"></i>
-            <i className="fas fa-align-justify"></i>
+            <i onClick={()=>this.props.visualVertical()} className="fas fa-th"></i>
+            <i onClick={()=>this.props.visualHorizontal()} className="fas fa-align-justify"></i>
             <form onSubmit={(event)=> this.evitarSubmit(event)} action="">
                 <input onChange={(event)=>this.controlarCambio(event)} value={this.state.cambio} type="text" name="search" id="" placeholder="Search"/>
                 <button type="submit"><i className="fas fa-search"></i></button>

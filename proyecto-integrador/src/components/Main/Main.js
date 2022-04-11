@@ -9,7 +9,8 @@ class Main extends Component {
             value: 1,
             peliculas: [],
             peliculasBackup: [],
-            cambio: ''
+            cambio: '',
+            clase: 'vertical'
         }
     }
     componentDidMount() {
@@ -45,15 +46,25 @@ class Main extends Component {
             peliculas: peliculasFiltrado
         })
     }
+    cambioHorizontal(){
+            this.setState({
+            clase: 'horizontal'
+        })
+    }
+    cambioVertical(){
+        this.setState({
+            clase:'vertical'
+        })
+    }
     render() {
         return (
             this.state.peliculas.length === 0 ?
                 <>
-                    <Header funcion={(valor) => this.filterFuncion(valor)} />
+                    <Header visualHorizontal={()=>this.cambioHorizontal()} visualVertical={()=>this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
                     <img className='spinner' src='./images/spiner.gif' alt='spinner' />
                 </> :
                 <>
-                    <Header funcion={(valor) => this.filterFuncion(valor)} />
+                    <Header visualHorizontal={()=>this.cambioHorizontal()} visualVertical={()=>this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
 
                     <main>
                         <button type="button" onClick={() => this.agregarPelicula()}>Cargar más tarjetas</button>
