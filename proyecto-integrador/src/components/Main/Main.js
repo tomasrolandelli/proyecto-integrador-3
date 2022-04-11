@@ -69,7 +69,7 @@ class Main extends Component {
                     <main>
                         <button type="button" onClick={() => this.agregarPelicula()}>Cargar más tarjetas</button>
                         <section className="card-container">
-                            {this.state.peliculas.map((pelicula) => <Article borrar={(id) => this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula} />)}
+                            {this.state.peliculas.map((pelicula) => <Article clase={this.state.clase} borrar={(id) => this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula} />)}
                         </section>
                     </main>
                 </>
