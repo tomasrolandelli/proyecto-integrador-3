@@ -28,7 +28,7 @@ class Article extends Component {
             <article className={this.props.clase}>
                 {this.props.clase === 'vertical'?
                                 <div>
-                                <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
+                                <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                             </div>
                             :
                             null}
@@ -40,7 +40,7 @@ class Article extends Component {
                 <div className='dinamico'>
                     {this.props.clase === 'horizontal'?
                     <div>
-                    <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
+                    <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                 </div>
                 :
                 null

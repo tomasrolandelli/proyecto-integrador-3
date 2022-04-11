@@ -67,7 +67,7 @@ class Main extends Component {
                     <Header visualHorizontal={()=>this.cambioHorizontal()} visualVertical={()=>this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
 
                     <main>
-                        <button type="button" onClick={() => this.agregarPelicula()}>Cargar más tarjetas</button>
+                        <button type="button" className='masTarjetas' onClick={() => this.agregarPelicula()}>Cargar más tarjetas</button>
                         <section className="card-container">
                             {this.state.peliculas.map((pelicula) => <Article clase={this.state.clase} borrar={(id) => this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula} />)}
                         </section>

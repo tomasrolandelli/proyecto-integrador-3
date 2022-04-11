@@ -90,6 +90,7 @@ main section{
 .more{
     color: blue;
     text-decoration: underline;
+    cursor: pointer;
 }
 .vertical div{
     display: flex;
@@ -110,6 +111,15 @@ main section{
     height: 100px;
     width: 100px;
     justify-self: center;
+}
+.fas{
+    cursor: pointer;
+}
+.botonX{
+    cursor: pointer;
+}
+.masTarjetas{
+    cursor: pointer;
 }
 
 /* Header */
