@@ -25,7 +25,7 @@ class Article extends Component {
     }
     render() {
         return (
-            <article>
+            <article className={this.props.clase}>
                 <div>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                 </div>

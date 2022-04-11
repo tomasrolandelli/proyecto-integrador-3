@@ -8,7 +8,8 @@ class Main extends Component {
         this.state = {
             value: 1,
             peliculas:[],
-            cambio:''
+            cambio:'',
+            clase: 'vertical'
         }
     }
     componentDidMount(){
@@ -43,15 +44,34 @@ class Main extends Component {
             peliculas: peliculasFiltrado
         })
     }
+    // cambioVisual (){
+    //     if(this.state.clase === 'vertical'){
+    //     this.setState({
+    //         clase: 'horizontal'
+    //     })} else {
+    //         this.setState({
+    //             clase: 'vertical'
+    //     })
+    // }}
+    cambioHorizontal(){
+            this.setState({
+            clase: 'horizontal'
+        })
+    }
+    cambioVertical(){
+        this.setState({
+            clase:'vertical'
+        })
+    }
     render() {
         return (
             this.state.peliculas.length===0?<img className='spinner' src='./images/spiner.gif' alt='spinner'/>:
             <>
-            <Header funcion={()=>this.filterFuncion()}/>
+            <Header visualHorizontal={()=>this.cambioHorizontal()} visualVertical={()=>this.cambioVertical()} funcion={()=>this.filterFuncion()}/>
         <main>
             <button type="button" onClick={()=>this.agregarPelicula()}>Cargar más tarjetas</button>
             <section className="card-container">
-                {this.state.peliculas.map((pelicula)=><Article borrar={(id)=> this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula}/>)}
+                {this.state.peliculas.map((pelicula)=><Article clase={this.state.clase} borrar={(id)=> this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula}/>)}
             </section>
         </main>
         </>
