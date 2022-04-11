@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Article from '../Article/Article'
+import Header from '../Header/Header'
 
 class Main extends Component {
     constructor(props){
@@ -36,31 +37,17 @@ class Main extends Component {
             })
         } )
     }
-    evitarSubmit(event){
-        event.preventDefault()
-    }
-    controlarCambio(event){
+    filterFuncion(valor){
+        let peliculasFiltrado = this.state.peliculas.filter((element)=>element.toLowerCase().includes(valor.toLowerCase()))
         this.setState({
-            cambio: event.target.value 
-        }, peliculas.filter((element)=>element === this.state.cambio))
-
-
+            peliculas: peliculasFiltrado
+        })
     }
     render() {
         return (
             this.state.peliculas.length===0?<img className='spinner' src='./images/spiner.gif' alt='spinner'/>:
             <>
-            <header>
-            <h1>Flickz (nombre provisorio)</h1>
-            <section>
-                <i className="fas fa-th"></i>
-                <i className="fas fa-align-justify"></i>
-                <form onSubmit={(event)=> this.evitarSubmit(event)} action="">
-                    <input onChange={(event)=>this.controlarCambio(event)} value={this.state.cambio} type="text" name="search" id="" placeholder="Search"/>
-                    <button type="submit"><i className="fas fa-search"></i></button>
-                </form>
-            </section>
-        </header>
+            <Header funcion={()=>this.filterFuncion()}/>
         <main>
             <button type="button" onClick={()=>this.agregarPelicula()}>Cargar más tarjetas</button>
             <section className="card-container">
