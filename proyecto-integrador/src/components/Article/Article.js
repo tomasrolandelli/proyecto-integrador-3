@@ -26,14 +26,30 @@ class Article extends Component {
     render() {
         return (
             <article className={this.props.clase}>
-                <div>
+                {this.props.clase === 'vertical'?
+                                <div>
+                                <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
+                            </div>
+                            :
+                            null}
+                <img src={`https://image.tmdb.org/t/p/original${this.props.info.backdrop_path}`} alt="" />
+                <div className='padre'>
+                <div className='hijo'>
+                <h3 className='nieto1'>{this.props.info.title}</h3>
+                <p className="description">Release date: {this.props.info.release_date}</p>
+                <div className='dinamico'>
+                    {this.props.clase === 'horizontal'?
+                    <div>
                     <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                 </div>
-                <img src={`https://image.tmdb.org/t/p/original${this.props.info.backdrop_path}`} alt="" />
-                <h3>{this.props.info.title}</h3>
-                <p className="description">Release date: {this.props.info.release_date}</p>
+                :
+                null
+                }
                 <p className='more' onClick={() => this.showMore()}>{this.state.verMensaje}</p>
+                </div>
+                </div>
                 {this.state.verMas ? <p className="aditional-info">{this.props.info.overview}</p> : null}
+                </div>
             </article>
         )
     }

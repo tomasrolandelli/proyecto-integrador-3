@@ -18,7 +18,7 @@ class Header extends Component {
   render() {
     return (
         <header>
-        <h1>Flickz (nombre provisorio)</h1>
+        <h1>Flickz</h1>
         <section>
             <i onClick={()=>this.props.visualVertical()} className="fas fa-th"></i>
             <i onClick={()=>this.props.visualHorizontal()} className="fas fa-align-justify"></i>
