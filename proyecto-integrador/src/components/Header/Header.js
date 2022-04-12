@@ -22,12 +22,12 @@ class Header extends Component {
                 <h1>Flickz</h1>
             </section>
             <section className='section2'>
-                <i onClick={()=>this.props.visualVertical()} className="fas fa-th"></i>
-                <i onClick={()=>this.props.visualHorizontal()} className="fas fa-align-justify"></i>
                 <form onSubmit={(event)=> this.evitarSubmit(event)} action="">
                     <input onChange={(event)=>this.controlarCambio(event)} value={this.state.cambio} type="text" name="search" id="" placeholder="Search"/>
                     <button type="submit"><i className="fas fa-search"></i></button>
                 </form>
+                <i onClick={()=>this.props.visualVertical()} className="fas fa-th icono1"></i>
+                <i onClick={()=>this.props.visualHorizontal()} className="fas fa-align-justify icono2"></i>
             </section>
     </header>
     )
