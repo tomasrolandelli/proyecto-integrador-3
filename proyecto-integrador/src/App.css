@@ -121,13 +121,23 @@ main section{
 .masTarjetas{
     cursor: pointer;
 }
+footer{
+    border: solid 2px black;
+    margin-top: 10px;
+}
 
+footer ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
 /* Header */
 header{
     display: flex;
     border: 2px solid black;
 }
-<<<<<<< HEAD
+
 section{
     margin-left: 15px;
     margin-right: 15px;
@@ -187,17 +197,5 @@ section{
         margin-left: 50px;
         margin-right: 50px;
     }
-=======
 
-footer{
-    border: solid 2px black;
-    margin-top: 10px;
-}
-
-footer ul{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 10px;
->>>>>>> 5e6545dcc54b47e351ec481660a52aa9f820c37a
 }
