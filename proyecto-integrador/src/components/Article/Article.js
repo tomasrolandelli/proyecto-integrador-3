@@ -25,15 +25,31 @@ class Article extends Component {
     }
     render() {
         return (
-            <article>
-                <div>
-                    <button onClick={() => this.props.borrar(this.props.info.id)}>X</button>
-                </div>
+            <article className={this.props.clase}>
+                {this.props.clase === 'vertical'?
+                                <div>
+                                <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
+                            </div>
+                            :
+                            null}
                 <img src={`https://image.tmdb.org/t/p/original${this.props.info.backdrop_path}`} alt="" />
-                <h3>{this.props.info.title}</h3>
+                <div className='padre'>
+                <div className='hijo'>
+                <h3 className='nieto1'>{this.props.info.title}</h3>
                 <p className="description">Release date: {this.props.info.release_date}</p>
+                <div className='dinamico'>
+                    {this.props.clase === 'horizontal'?
+                    <div>
+                    <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
+                </div>
+                :
+                null
+                }
                 <p className='more' onClick={() => this.showMore()}>{this.state.verMensaje}</p>
+                </div>
+                </div>
                 {this.state.verMas ? <p className="aditional-info">{this.props.info.overview}</p> : null}
+                </div>
             </article>
         )
     }
