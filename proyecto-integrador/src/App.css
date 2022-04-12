@@ -61,3 +61,63 @@ header{
     display: flex;
     border: 2px solid black;
 }
+section{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+@media (min-width: 768px){
+    main section article {
+        width: 30%;
+        height: auto;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 5px;
+        border: solid 1px black;
+    }
+    /* Header */
+    header{
+        display: flex;
+        justify-content: center;
+        border: 2px solid black;
+    }
+    section{
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .section1{
+        text-align: left;
+    }
+    .section2{
+        text-align: right;
+    }
+}
+@media (min-width: 1024px){
+    main section article {
+        width: 22.5%;
+        height: auto;
+        margin: auto;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        margin-top: 5px;
+        border: solid 1px black;
+    }
+    /* Header */
+    header{
+        display: flex;
+        justify-content: center;
+        border: 2px solid black;
+    }
+    section{
+        justify-content: center;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
