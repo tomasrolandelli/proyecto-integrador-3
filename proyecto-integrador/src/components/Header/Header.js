@@ -22,7 +22,7 @@ class Header extends Component {
                 <h1>Flickz</h1>
             </section>
             <section className='section2'>
-                <form onSubmit={(event)=> this.evitarSubmit(event)} action="">
+                <form onSubmit={(event)=> this.evitarSubmit(event)} action="" className='formaction'>
                     <input onChange={(event)=>this.controlarCambio(event)} value={this.state.cambio} type="text" name="search" id="" placeholder="Search"/>
                     <button type="submit"><i className="fas fa-search"></i></button>
                 </form>

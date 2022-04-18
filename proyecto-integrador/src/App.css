@@ -150,6 +150,10 @@ padding: 20px;
     left: 75px;
     top: 20px;
 }
+.formaction{
+    position: relative;
+    right: 25px;
+}
 
 @media (min-width: 768px){
     .vertical {
