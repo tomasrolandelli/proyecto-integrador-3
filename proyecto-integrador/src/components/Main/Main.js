@@ -31,6 +31,7 @@ class Main extends Component {
         this.setState({
             peliculas: resultado
         })
+        
     }
     agregarPelicula() {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a86dfc3e8792d8c35b2b0bcfae9f4488&language=en-US&page=${this.state.value}`)
@@ -77,7 +78,9 @@ class Main extends Component {
                     <Header visualHorizontal={() => this.cambioHorizontal()} visualVertical={() => this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
 
                     <main>
-                        <button type="button" className='masTarjetas' onClick={() => this.agregarPelicula()}>Cargar más tarjetas</button>
+                        <div className='containerBoton'>
+                        <button type="button" className='masTarjetas' onClick={() => this.agregarPelicula()}>Cargar mas peliculas!</button>
+                        </div>
                         <section className="card-container">
                             {this.state.peliculas.map((pelicula) => <Article clase={this.state.clase} borrar={(id) => this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula} />)}
                         </section>

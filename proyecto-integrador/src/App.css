@@ -1,6 +1,6 @@
 /* Main */
 body{
-    background-image: url('images.jpg');
+    background-image: url('../public/images/images.jpg');
     background-repeat: no-repeat; 
     background-size: cover;
     display: flex;
@@ -126,11 +126,24 @@ main section{
 .botonX{
     cursor: pointer;
 }
+.botonX:hover{
+    background-color: red;
+}
+.containerBoton{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .masTarjetas{
     cursor: pointer;
+    width: 25%;
+    height: 30px;
+}
+.masTarjetas:hover{
+    background-color: aqua;
 }
 footer{
-    background-image: url('white-abstract-background_23-2148810113.webp');
+    background-image: url('../public/images/white-abstract-background_23-2148810113.webp');
     border: solid 2px black;
     margin-top: 10px;
 }
@@ -143,11 +156,14 @@ footer ul{
 }
 /* Header */
 header{
-    background-image: url('white-abstract-background_23-2148810113.webp');
+    background-image: url('../public/images/white-abstract-background_23-2148810113.webp');
     display: flex;
     border: 2px solid black;
 }
-
+h1{
+    font-size: 50px;
+    margin-left: 10px;
+}
 .section1{
     position: relative;
     padding: 20px;
