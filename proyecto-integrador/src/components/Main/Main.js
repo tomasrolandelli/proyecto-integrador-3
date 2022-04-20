@@ -14,7 +14,7 @@ class Main extends Component {
         }
     }
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a86dfc3e8792d8c35b2b0bcfae9f4488&language=en-US&page=${this.state.value}?limit=10`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a86dfc3e8792d8c35b2b0bcfae9f4488&language=en-US&page=${this.state.value}`)
             .then((response) => response.json())
             .then((data) => {
                 let moviesParaMostrar = data.results.slice(0, 10)
@@ -46,6 +46,7 @@ class Main extends Component {
                     value: this.state.value + 1
                 })
             })
+            .catch((err)=>console.log(err))
     }
     filterFuncion(valor) {
         let peliculasFiltrado = this.state.peliculasBackup.filter((element) => element.title.toLowerCase().includes(valor.toLowerCase()))

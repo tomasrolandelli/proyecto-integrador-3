@@ -19,7 +19,7 @@ class Header extends Component {
     return (
         <header>
             <section className='section1'>
-                <h1>Flickz   <i class="fa fa-film"></i></h1>
+                <h1>Flickz   <i className="fa fa-film"></i></h1>
             </section>
             <section className='section2'>
                 <form onSubmit={(event)=> this.evitarSubmit(event)} action="" className='formaction'>
