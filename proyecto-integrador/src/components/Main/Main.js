@@ -14,13 +14,16 @@ class Main extends Component {
         }
     }
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a86dfc3e8792d8c35b2b0bcfae9f4488&language=en-US&page=${this.state.value}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a86dfc3e8792d8c35b2b0bcfae9f4488&language=en-US&page=${this.state.value}?limit=10`)
             .then((response) => response.json())
-            .then((data) => this.setState({
-                peliculas: data.results,
-                peliculasBackup: data.results,
-                value: this.state.value + 1
-            }))
+            .then((data) => {
+                let moviesParaMostrar = data.results.slice(0, 10)
+                this.setState({
+                    peliculas: moviesParaMostrar,
+                    peliculasBackup: moviesParaMostrar,
+                    value: this.state.value + 1
+                })
+            })
             .catch((e) => console.log(e))
     }
     borrarPelicula(peliculaId) {
@@ -33,9 +36,12 @@ class Main extends Component {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=a86dfc3e8792d8c35b2b0bcfae9f4488&language=en-US&page=${this.state.value}`)
             .then((response) => response.json())
             .then((data) => {
-                let arrayViejo = this.state.peliculas
+                let moviesParaMostrar = data.results.slice(0, 10)
+                let arrayViejo = this.state.peliculas;
+                let backupViejo = this.state.peliculasBackup
                 this.setState({
-                    peliculas: arrayViejo.concat(data.results),
+                    peliculas: arrayViejo.concat(moviesParaMostrar),
+                    peliculasBackup: backupViejo.concat(moviesParaMostrar),
                     value: this.state.value + 1
                 })
             })
@@ -46,25 +52,29 @@ class Main extends Component {
             peliculas: peliculasFiltrado
         })
     }
-    cambioHorizontal(){
-            this.setState({
+    cambioHorizontal() {
+        this.setState({
             clase: 'horizontal'
         })
     }
-    cambioVertical(){
+    cambioVertical() {
         this.setState({
-            clase:'vertical'
+            clase: 'vertical'
         })
     }
     render() {
         return (
             this.state.peliculas.length === 0 ?
                 <>
-                    <Header visualHorizontal={()=>this.cambioHorizontal()} visualVertical={()=>this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
-                    <img className='spinner' src='./images/spiner.gif' alt='spinner' />
+                    <Header visualHorizontal={() => this.cambioHorizontal()} visualVertical={() => this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
+                    <div className='load'>
+                        <h3>Cargando...</h3>
+                        <img className='spinner' src='./images/spiner.gif' alt='spinner' />
+                    </div>
+                    {/* {setTimeout(()=><h3>No se econtraron resultados de {this.state.cambio}</h3>, 5000)} */}
                 </> :
                 <>
-                    <Header visualHorizontal={()=>this.cambioHorizontal()} visualVertical={()=>this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
+                    <Header visualHorizontal={() => this.cambioHorizontal()} visualVertical={() => this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
 
                     <main>
                         <button type="button" className='masTarjetas' onClick={() => this.agregarPelicula()}>Cargar más tarjetas</button>

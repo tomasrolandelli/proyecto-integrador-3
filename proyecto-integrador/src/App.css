@@ -107,10 +107,16 @@ main section{
     margin-top: 3px;
     margin-right: 3px;
 }
+.load{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
 .spinner{
     height: 100px;
     width: 100px;
-    justify-self: center;
+    align-self: center;
 }
 .fas{
     cursor: pointer;
