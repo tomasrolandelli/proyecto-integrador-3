@@ -83,7 +83,7 @@ class Main extends Component {
                         <button type="button" className='masTarjetas' onClick={() => this.agregarPelicula()}>Cargar mas peliculas!</button>
                         </div>
                         <section className="card-container">
-                            {this.state.peliculas.map((pelicula) => <Article clase={this.state.clase} borrar={(id) => this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula} />)}
+                            {this.state.peliculas.map((pelicula) => <Article visual={this.state.clase} borrar={(id) => this.borrarPelicula(id)} key={pelicula.id + Date.now()} info={pelicula} />)}
                         </section>
                     </main>
                 </>

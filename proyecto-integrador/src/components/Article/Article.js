@@ -25,7 +25,7 @@ class Article extends Component {
     }
     render() {
         return (
-            <article className={this.props.clase}>
+            <article className={this.props.visual}>
                 {this.props.clase === 'vertical'?
                                 <div>
                                 <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
