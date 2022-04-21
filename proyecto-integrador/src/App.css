@@ -16,6 +16,11 @@ main section{
     justify-content: space-between;
 
 }
+.notFound{
+    color: white;
+    text-align: center;
+    width: 100%;
+}
 .vertical{
     width: 45%;
     height: auto;
