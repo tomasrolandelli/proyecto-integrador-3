@@ -10,7 +10,8 @@ class Main extends Component {
             peliculas: [],
             peliculasBackup: [],
             cambio: '',
-            clase: 'vertical'
+            clase: 'vertical',
+            leyenda: null
         }
     }
     componentDidMount() {
@@ -50,9 +51,15 @@ class Main extends Component {
     }
     filterFuncion(valor) {
         let peliculasFiltrado = this.state.peliculasBackup.filter((element) => element.title.toLowerCase().includes(valor.toLowerCase()))
-        this.setState({
-            peliculas: peliculasFiltrado
-        })
+        if (peliculasFiltrado.length === 0) {
+            this.setState({
+                leyenda: 1
+            })
+        }else{        this.setState({
+            peliculas: peliculasFiltrado,
+            leyenda: null
+        })}
+
     }
     cambioHorizontal() {
         this.setState({
@@ -66,6 +73,12 @@ class Main extends Component {
     }
     render() {
         return (
+            this.state.leyenda !== null ?
+            <>
+            <Header visualHorizontal={() => this.cambioHorizontal()} visualVertical={() => this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
+            <h2 className='notFound'>No se encontraron resultados del termino buscado :(</h2>
+            </>:
+
             this.state.peliculas.length === 0 ?
                 <>
                     <Header visualHorizontal={() => this.cambioHorizontal()} visualVertical={() => this.cambioVertical()} funcion={(valor) => this.filterFuncion(valor)} />
