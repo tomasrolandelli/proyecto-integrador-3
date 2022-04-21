@@ -26,7 +26,7 @@ class Article extends Component {
     render() {
         return (
             <article className={this.props.visual}>
-                {this.props.clase === 'vertical'?
+                {this.props.visual === 'vertical'?
                                 <div>
                                 <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                             </div>
@@ -38,7 +38,7 @@ class Article extends Component {
                 <h3 className='nieto1'>{this.props.info.title}</h3>
                 <p className="description">Release date: {this.props.info.release_date}</p>
                 <div className='dinamico'>
-                    {this.props.clase === 'horizontal'?
+                    {this.props.visual === 'horizontal'?
                     <div>
                     <button className='botonX' onClick={() => this.props.borrar(this.props.info.id)}>X</button>
                 </div>

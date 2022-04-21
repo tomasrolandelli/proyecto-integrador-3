@@ -24,10 +24,11 @@ class Header extends Component {
             <section className='section2'>
                 <form onSubmit={(event)=> this.evitarSubmit(event)} action="" className='formaction'>
                     <input onChange={(event)=>this.controlarCambio(event)} value={this.state.cambio} type="text" name="search" id="" placeholder="Search"/>
-                    <button type="submit"><i className="fas fa-search"></i></button>
                 </form>
+                <div className='contenedorHeader'>
                 <i onClick={()=>this.props.visualVertical()} className="fas fa-th icono1"></i>
                 <i onClick={()=>this.props.visualHorizontal()} className="fas fa-align-justify icono2"></i>
+                </div>
             </section>
     </header>
     )

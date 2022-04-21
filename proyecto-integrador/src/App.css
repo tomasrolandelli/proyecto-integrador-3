@@ -73,6 +73,7 @@ main section{
     margin: 3px 3px 3px;
     width: 192px;
     height: 108px;
+    border: 2px solid black;
 }
 .horizontal .dinamico div{
     display: flex;
@@ -85,6 +86,7 @@ main section{
 }
 .vertical img {
     margin: 3px 3px 3px;
+    border: 2px solid black;
 }
 .aditional-info{
     margin: 3px 3px 3px 3px ;
@@ -142,10 +144,11 @@ main section{
 .masTarjetas{
     cursor: pointer;
     width: 25%;
-    height: 30px;
+    height: 50px;
 }
 .masTarjetas:hover{
     background-color: aqua;
+    border: 1px solid blue
 }
 footer{
     background-image: url('../public/images/white-abstract-background_23-2148810113.webp');
@@ -166,25 +169,44 @@ header{
     border: 2px solid black;
 }
 h1{
-    font-size: 50px;
+    font-size: 30px;
     margin-left: 10px;
 }
 .section1{
-    position: relative;
+    width: 50%;
     padding: 20px;
     font-family: 'Philosopher', sans-serif;
+    text-align: center;
 }
 .icono1{
-padding: 20px;
+    padding: 20px;
+}
+.icono2{
+    padding: 20px;
+}
+.icono1:hover{
+    border: 1px solid blue;
+    background-color: aqua;
+}
+.icono2:hover{
+    border: 1px solid blue;
+    background-color: aqua;
 }
 .section2{
-    position: relative;
-    left: 75px;
-    top: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 35px;
+}
+.contenedorHeader{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin-top: 5px;
 }
 .formaction{
-    position: relative;
-    right: 25px;
+    display: block;
 }
 
 @media (min-width: 768px){
@@ -200,50 +222,16 @@ padding: 20px;
         margin-top: 5px;
         border: solid 1px black;
     }
+    .masTarjetas{
+        height: 30px;
+    }
     /* Header */
-    header{
-        display: flex;
-        justify-content: center;
-        border: 2px solid black;
-    }
-    section{
-        margin-left: 25px;
-        margin-right: 25px;
-    }
-    .section1{
-        position: relative;
-        right: 200px;
-    }
-    .section2{
-        position: relative;
-        left: 150px;
+    h1{
+        font-size: 50px;
     }
 }
 @media (min-width: 1024px){
-    .vertical {
-        width: 22.5%;
-        height: auto;
-        margin: auto;
-        background-color: rgb(255, 255, 255);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        margin-top: 5px;
-        border: solid 1px black;
-    }
-    /* Header */
-    header{
-        display: flex;
-        justify-content: center;
-        border: 2px solid black;
-    }
-    .section1{
-        position: relative;
-        right: 450px;
-    }
-    .section2{
-        position: relative;
-        left: 450px;
+    input{
+        height: 30px;
     }
 }
